@@ -1,0 +1,49 @@
+{
+  "schema": "ec66_release_design",
+  "version": 1,
+  "name": "Low pose large pitch dump",
+  "target": {
+    "p_world_m": [
+      -0.55,
+      -0.6,
+      0.05
+    ],
+    "rpy_xyz_deg": [
+      -0.5886034942699647,
+      29.342485256759677,
+      37.487726650404106
+    ],
+    "v_world_m_s": [
+      0.03,
+      -0.02,
+      0.0
+    ],
+    "omega_world_rad_s": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "action": {
+    "duration_s": 2.0,
+    "brake_start_fraction": 0.0,
+    "brake_shape": "balanced",
+    "flip_axis": "tool_y",
+    "flip_angle_deg": 65.0,
+    "flip_start_fraction": 0.05,
+    "flip_end_fraction": 0.95,
+    "flip_shape": "balanced"
+  },
+  "simulation": {
+    "substeps": 4,
+    "settle_seconds": 5.0,
+    "load_mode": "ideal",
+    "seed": 7,
+    "velocity_noise_m_s": 0.02
+  },
+  "approach": {
+    "allow_pullback": true,
+    "screen_candidates": 3,
+    "minimum_retention": 0.95
+  }
+}

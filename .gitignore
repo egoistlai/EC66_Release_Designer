@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+outputs/
+imgui.ini
+.venv/
+.pytest_cache/
+*.mp4
+*.mkv
+*.avi
+*.mov

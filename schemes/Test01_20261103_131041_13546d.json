@@ -1,0 +1,49 @@
+{
+  "schema": "ec66_release_design",
+  "version": 1,
+  "name": "Test01",
+  "target": {
+    "p_world_m": [
+      -0.4219000041484833,
+      -0.5867000222206116,
+      0.19210000336170197
+    ],
+    "rpy_xyz_deg": [
+      80.37000274658203,
+      29.34000015258789,
+      54.2599983215332
+    ],
+    "v_world_m_s": [
+      0.05700000002980232,
+      -0.18700000643730164,
+      0.1
+    ],
+    "omega_world_rad_s": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "action": {
+    "duration_s": 1.5099999904632568,
+    "brake_start_fraction": 0.10000000149011612,
+    "brake_shape": "balanced",
+    "flip_axis": "tool_x",
+    "flip_angle_deg": 38.0,
+    "flip_start_fraction": 0.15000000596046448,
+    "flip_end_fraction": 0.8500000238418579,
+    "flip_shape": "balanced"
+  },
+  "simulation": {
+    "substeps": 4,
+    "settle_seconds": 4.0,
+    "load_mode": "ideal",
+    "seed": 7,
+    "velocity_noise_m_s": 0.02
+  },
+  "approach": {
+    "allow_pullback": true,
+    "screen_candidates": 3,
+    "minimum_retention": 0.949999988079071
+  }
+}
