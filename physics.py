@@ -7,7 +7,7 @@ from pathlib import Path
 
 import numpy as np
 
-from bootstrap import LEGACY, NEAR
+from bootstrap import RUNTIME
 from design import read_json, write_json
 from motion import load_motion
 
@@ -89,8 +89,8 @@ def simulate(trajectory, directory, spec, context, *, ideal, release_time=0., st
     times = np.asarray(sim.replay_times)
     retained = np.asarray(sim.replay_retained)
     distribution = analyze_particle_distribution(positions, velocities, times_s=times, retained_counts=retained)
-    scene_config = NEAR / "app/scene_config_particles.json"
-    load_snapshot = NEAR / "app" / read_json(scene_config)["particle_positions_file"]
+    scene_config = RUNTIME / "scene_config_particles.json"
+    load_snapshot = RUNTIME / read_json(scene_config)["particle_positions_file"]
     save_distribution_artifact(distribution, directory / "distribution", source={
         "trajectory": str(Path(trajectory).resolve()), "initialization": "ideal_rigid_carried" if ideal else "fixed_start_continuous",
         "trajectory_sha256": hashlib.sha256(Path(trajectory).read_bytes()).hexdigest(),

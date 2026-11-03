@@ -9,11 +9,11 @@ from scipy.interpolate import PPoly, make_interp_spline
 from scipy.special import betainc
 from scipy.spatial.transform import Rotation
 
-from bootstrap import LEGACY
+import bootstrap  # Register the bundled runtime before importing its modules.
 from design import fixed_start, target_dict, validate, write_json
 from emcp_phase1_planning import EMCPPhase1Context
 from trajectory_planning import quintic_boundary_motion
-from generate_type01_pitch_dump import concatenate
+from motion_join import concatenate
 
 
 def shape_parameters(shape):

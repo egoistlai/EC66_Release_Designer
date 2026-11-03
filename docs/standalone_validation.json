@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-03",
+  "environment": {
+    "os": "Ubuntu 22.04.5 LTS / WSL2, x86_64",
+    "python": "3.12.15",
+    "newton": "1.6.1",
+    "warp_lang": "1.18.0",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 8 GB",
+    "driver": "610.60"
+  },
+  "checks": {
+    "unit_and_integration_tests_passed": 20,
+    "shell_syntax": "pass",
+    "locked_dependency_consistency": "pass, 28 installed packages",
+    "isolated_install": "pass; new Python and virtual environment in a temporary checkout with no sibling EC66 projects",
+    "relocated_release_build": "pass; no historical output or demonstration cache",
+    "opengl_gui": "pass; 45 frames and screenshot inspected",
+    "newton_release_simulation": "pass",
+    "newton_full_approach_and_comparison": "pass"
+  },
+  "full_motion_spec": {
+    "base_scheme": "schemes/03_large_pitch_dump.json",
+    "substeps": 8,
+    "allow_pullback": false,
+    "screen_candidates": 1,
+    "settle_seconds": 5.0
+  },
+  "full_motion_result": {
+    "selected": "clearance_0.15_4.0s",
+    "approach_seconds": 4.0,
+    "release_action_seconds": 2.0,
+    "particle_count": 597,
+    "minimum_pre_release_retention": 0.9966499162479062,
+    "release_relative_speed_rms_m_s": 0.0011865983991124001,
+    "settled_usable_fraction": 0.994974874371859,
+    "mass_grid_tv_including_missing_mass": 0.08375209380234519,
+    "retention_pass": true,
+    "matches_pre_migration_validation_metrics": true
+  },
+  "scope": "One fixed-load validation case. This is not a guarantee for other release schemes, materials or hardware. Generated trajectories, replays and environment directories are not distributed in Git."
+}

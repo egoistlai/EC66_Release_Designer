@@ -1,0 +1,131 @@
+{
+  "urdf": "assets/ec66_description.urdf",
+  "shovel_mesh": "assets/chanzi.STL",
+  "shovel_scale": 0.001,
+  "shovel_origin_stl": [
+    138,
+    30.0,
+    0.0
+  ],
+  "world_from_base_xyz": [
+    -1.2069976,
+    -0.70478,
+    0.1441063
+  ],
+  "world_from_base_rpy_deg": [
+    -0.36,
+    0.61,
+    -151.25
+  ],
+  "initial_ee_xyz_base": [
+    -0.5679373,
+    -0.1236619,
+    0.1864225
+  ],
+  "initial_ee_rpy_deg_base": [
+    -139.04,
+    -0.56,
+    97.72
+  ],
+  "mount_xyz": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "mount_rotations_deg": [
+    {
+      "axis": "z",
+      "angle_deg": 90.0
+    },
+    {
+      "axis": "x",
+      "angle_deg": 90.0
+    }
+  ],
+  "initial_q_deg": [
+    179.38,
+    -59.75,
+    80.23,
+    28.81,
+    -95.03,
+    173.32
+  ],
+  "throw_q_deg": [
+    179.38,
+    -59.75,
+    80.23,
+    28.81,
+    -95.03,
+    173.32
+  ],
+  "joint_trajectory_enabled": false,
+  "joint_velocity_limit_scale": 1.0,
+  "joint_velocity_limits_deg_s": [
+    150.0,
+    150.0,
+    190.0,
+    200.0,
+    200.0,
+    200.0
+  ],
+  "joint_acceleration_limits_deg_s2": [
+    1400.0,
+    1200.0,
+    1400.0,
+    2000.0,
+    2000.0,
+    2000.0
+  ],
+  "tcp_linear_velocity_limit_m_s": 1.5,
+  "tcp_linear_acceleration_limit_m_s2": 9.0,
+  "tcp_angular_velocity_limit_deg_s": 150.0,
+  "tcp_angular_acceleration_limit_deg_s2": 400.0,
+  "settle_seconds": 0.5,
+  "post_settle_seconds": 1.0,
+  "throw_seconds": 0.8,
+  "bucket_xyz": [
+    0.12,
+    -0.96,
+    -0.8
+  ],
+  "bucket_rpy_deg": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "bucket_radius": 0.96,
+  "bucket_height": 0.8,
+  "bucket_wall": 0.025,
+  "bucket_segments": 48,
+  "fill_lo": [
+    0.16,
+    -0.11,
+    0.035
+  ],
+  "fill_hi": [
+    0.5,
+    0.11,
+    1.1
+  ],
+  "voxel_size": 0.008,
+  "shovel_collision_margin": 0.004,
+  "particles_per_cell": 2,
+  "density": 1500.0,
+  "friction": 1.0,
+  "fps": 60,
+  "substeps": 8,
+  "mpm_max_iterations": 50,
+  "progress_every_frames": 30,
+  "distribution_bins": 60,
+  "settled_speed": 0.05,
+  "fixed_particle_count": 597,
+  "material_parameters": {
+    "yield_stress": 50.0,
+    "yield_pressure": 100000.0,
+    "tensile_yield_ratio": 0.0005,
+    "viscosity": 1.0
+  },
+  "particle_diameter_m": 0.02,
+  "particle_positions_file": "settled_layered_particles_2cm.json",
+  "grain_solver": "xpbd"
+}

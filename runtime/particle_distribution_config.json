@@ -1,0 +1,30 @@
+{
+  "format": 1,
+  "coordinate_frame": "bucket_local",
+  "bucket_center_world_m": [0.12, -0.96, -0.8],
+  "bucket_rpy_xyz_deg": [0.0, 0.0, 0.0],
+  "robot_base_world_xy_m": [-1.2069976, -0.70478],
+  "bucket_radius_m": 0.96,
+  "bucket_height_m": 0.8,
+  "bucket_wall_m": 0.025,
+  "bucket_segments": 48,
+  "voxel_size_m": 0.008,
+  "usable_radius_m": 0.925,
+  "settled_speed_m_s": 0.05,
+  "primary_grid_bins": 24,
+  "reference_grid_bins": 60,
+  "region_grid_shape": [4, 4],
+  "stability_window_s": 0.25,
+  "stable_centroid_drift_m": 0.01,
+  "stable_speed_p95_m_s": 0.05,
+  "quantiles": [0.05, 0.25, 0.5, 0.75, 0.95],
+  "comparison_weights": {
+    "grid_total_variation": 0.40,
+    "marginal_wasserstein": 0.15,
+    "region_total_variation": 0.10,
+    "centroid": 0.10,
+    "covariance": 0.05,
+    "axis_quantiles": 0.10,
+    "category_fractions": 0.10
+  }
+}

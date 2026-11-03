@@ -12,7 +12,7 @@ from zoneinfo import ZoneInfo
 import numpy as np
 from scipy.spatial.transform import Rotation
 
-from bootstrap import ROOT, LEGACY
+from bootstrap import ROOT, RUNTIME
 
 
 def read_json(path):
@@ -35,16 +35,16 @@ def fingerprint(spec):
 
 def fixed_start():
     """The migrated BASE-FRAME FLANGE start, not an old world-frame tool pose."""
-    cfg = read_json(LEGACY / "app/scene_config.json")
+    cfg = read_json(RUNTIME / "scene_config.json")
     return {"q_rad": np.deg2rad(cfg["initial_q_deg"]).tolist(),
             "flange_pose_base": cfg["initial_flange_tcp_pose_base"],
-            "source": str(LEGACY / "app/scene_config.json")}
+            "source": str(RUNTIME / "scene_config.json")}
 
 
 def default_design():
     from kinematics import EC66Kinematics, transform, mount_transform
-    cfg = read_json(LEGACY / "app/scene_config.json")
-    kin = EC66Kinematics(LEGACY / "app" / cfg["urdf"],
+    cfg = read_json(RUNTIME / "scene_config.json")
+    kin = EC66Kinematics(RUNTIME / cfg["urdf"],
                         transform(cfg["world_from_base_xyz"], np.deg2rad(cfg["world_from_base_rpy_deg"])),
                         mount_transform(cfg["mount_rotations_deg"], cfg["mount_xyz"]), cfg["shovel_normal_local"])
     pose = kin.tool_pose_world(np.asarray(fixed_start()["q_rad"]), np.array([.3, 0, .08]))

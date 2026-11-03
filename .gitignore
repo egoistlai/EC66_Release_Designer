@@ -3,6 +3,8 @@ __pycache__/
 outputs/
 imgui.ini
 .venv/
+.python/
+.uv-cache/
 .pytest_cache/
 *.mp4
 *.mkv

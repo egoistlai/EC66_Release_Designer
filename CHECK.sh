@@ -4,4 +4,8 @@ DESIGNER_ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 unset PYTHONHOME PYTHONPATH
 export PYTHONNOUSERSITE=1
 cd "$DESIGNER_ROOT"
-exec "$DESIGNER_ROOT/../EC66_Newton_Pose_Controller/.venv/bin/python" -s -m unittest discover -s tests -v
+if [[ ! -x "$DESIGNER_ROOT/.venv/bin/python" ]]; then
+  echo "Missing project environment. Run ./INSTALL.sh first." >&2
+  exit 1
+fi
+exec "$DESIGNER_ROOT/.venv/bin/python" -s -m unittest discover -s tests -v

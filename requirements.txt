@@ -1,0 +1,20 @@
+# Direct runtime dependencies; INSTALL.sh uses the complete locked environment.
+newton==1.6.1
+warp-lang==1.18.0
+numpy==2.3.1
+scipy==1.18.1
+trimesh==5.1.1
+pyglet==2.1.16
+imgui-bundle==1.92.900
+PyOpenGL==3.1.10
+usd-core==26.8
+pillow==12.3.0
+ruckig==0.19.4
+requests==2.32.3
+gitpython==3.2.0
+pyyaml==6.0.3
+cbor2==6.1.5
+fast-simplification==0.2.0
+pycollada==0.9.3
+resolve-robotics-uri-py==0.5.1
+psutil==5.9.8

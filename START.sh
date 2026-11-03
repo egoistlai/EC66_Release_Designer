@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 DESIGNER_ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
-DESIGNER_PY="$DESIGNER_ROOT/../EC66_Newton_Pose_Controller/.venv/bin/python"
+DESIGNER_PY="$DESIGNER_ROOT/.venv/bin/python"
 if [[ ! -x "$DESIGNER_PY" ]]; then
-  echo "Missing existing EC66 Python environment: $DESIGNER_PY" >&2
+  echo "Missing project environment. Run ./INSTALL.sh first." >&2
   exit 1
 fi
 unset PYTHONHOME PYTHONPATH

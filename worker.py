@@ -7,7 +7,7 @@ from pathlib import Path
 import traceback
 import numpy as np
 
-from bootstrap import ROOT, LEGACY, DYNAMIC, NEAR
+from bootstrap import ROOT, RUNTIME
 from design import read_json, write_json, fingerprint
 from motion import build_release
 
@@ -22,11 +22,10 @@ def run(directory, task):
     try:
         write_json(directory / "provenance.json", {
             "design_hash": fingerprint(spec),
-            "files_sha256": {str(p): hashlib.sha256(p.read_bytes()).hexdigest()
-                              for p in [*ROOT.glob("*.py"), LEGACY / "app/scene_config.json", LEGACY / "app/emcp_phase1_config.json",
-                                        LEGACY / "app/kinematics.py", LEGACY / "app/trajectory_planning.py",
-                                        LEGACY / "app/emcp_phase1_planning.py", LEGACY / "app/particle_distribution.py",
-                                        DYNAMIC / "retention_physics.py", NEAR / "app/release_reference_viewer.py"]}})
+            "files_sha256": {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()
+                              for p in [*ROOT.glob("*.py"), *ROOT.glob("requirements*.txt"),
+                                        *sorted(RUNTIME.rglob("*"))]
+                              if p.is_file() and "__pycache__" not in p.parts}})
         context, release, audit = build_release(spec, directory, status)
         result = {"release_audit": str(directory / "release_audit.json"), "task": task}
         if task in ("simulate", "approach"):

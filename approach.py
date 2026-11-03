@@ -7,7 +7,7 @@ import numpy as np
 from design import fixed_start, write_json
 from motion import spline_motion, exact_audit, audit, failure_message, save_motion
 from trajectory_planning import quintic_boundary_motion
-from generate_type01_pitch_dump import concatenate
+from motion_join import concatenate
 from retention_physics import retention_physics_audit
 from physics import simulate
 

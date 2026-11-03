@@ -1,0 +1,30 @@
+{
+  "urdf": "assets/ec66_description.urdf",
+  "shovel_mesh": "assets/chanzi.STL",
+  "shovel_scale": 0.001,
+  "shovel_origin_stl": [138.0, 30.0, 0.0],
+  "shovel_normal_local": [0.0, 0.0, 1.0],
+  "world_from_base_xyz": [-1.2069976, -0.70478, 0.1441063],
+  "world_from_base_rpy_deg": [-0.36, 0.61, -151.25],
+  "mount_xyz": [0.0, 0.0, 0.0],
+  "mount_rotations_deg": [
+    {"axis": "z", "angle_deg": 90.0},
+    {"axis": "x", "angle_deg": 90.0}
+  ],
+  "initial_q_deg": [181.08705686, -63.00297723, 97.84592210, -4.63034441, -96.48870137, 175.34229846],
+  "initial_flange_tcp_pose_base": {
+    "p_base_m": [-0.540661, -0.142302, 0.111460],
+    "quaternion_xyzw": [0.559687, 0.660870, -0.376476, -0.329041]
+  },
+  "bucket_xyz": [0.12, -0.96, -0.8],
+  "bucket_rpy_deg": [0.0, 0.0, 0.0],
+  "bucket_radius": 0.96,
+  "bucket_height": 0.8,
+  "bucket_wall": 0.025,
+  "bucket_segments": 48,
+  "friction": 0.6,
+  "fps": 60,
+  "ik_max_evaluations": 100,
+  "ik_position_tolerance_m": 0.005,
+  "ik_normal_tolerance_deg": 2.0
+}
